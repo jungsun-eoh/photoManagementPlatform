@@ -6,4 +6,6 @@ router.get('/', function(req, res, next) {
   res.sendFile('index.html');
 });
 
+router.get('/login', function (req, res, next){})
+
 module.exports = router;

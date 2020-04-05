@@ -8,6 +8,8 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+// middleware function 
+// order is important
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -16,5 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+// ** put error handler
 
 module.exports = app;
