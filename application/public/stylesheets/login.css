@@ -1,0 +1,32 @@
+
+
+h1 {
+	display: inline-block;
+	text-align: center;
+	margin: auto;
+	width: 50%;
+	padding: 10px;
+	color: green;
+	font-family: verdana;
+	font-size:30px
+}
+
+p {
+	border: 3px solid green;
+	display: inline-block;
+	margin: auto;
+	text-align: center;
+
+	width: 50%;
+
+	font-family: verdana;
+
+	padding: 30px
+}
+
+#button {
+	background-color: orange;
+	
+
+
+}

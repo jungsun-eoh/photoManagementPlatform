@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-sidth, initial-scale=1.0">
+        <title>User Registration</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/registraion.css">
+
+
+    </head>
+    <body>
+        <div>
+            <header>
+                <h1> Register</h1>
+            </header>
+            <form>
+                <p>
+                <label for = "username" class="txt-label"> Username</label>
+                <input
+                    placeholder="Type your username"
+                    required pattern= "\d+"
+                    id="username" 
+                    type="text" 
+                    required>
+                <br />    
+                <label for = "Email" class="txt-label"> Email</label>
+                <input
+                    placeholder="Email address"
+                    required pattern= "\d+"
+                    id="username" 
+                    type="text" 
+                    required>
+                <br />    
+                <label for="password" class="txt-label">Password</label>
+                <input 
+                    placeholder="Enter password"
+                    type="password"
+                    required />
+                <br />
+                <label for = "concirmPassword" class="txt-label"> Confirm Password</label>
+                <input 
+                    placeholder="Repeat password"
+                    type="password"
+                    required />
+                <br />
+                <input type ="checkbox" name="accept" required> I am 13 years of age or older.
+                <br />
+                <input type ="checkbox" name="accept" required> I accept <a href="#">Terms of Service</a>  and <a href="#">Privacy Rules</a>.
+                <br />
+                <button id="cancel" type="reset" >cancel</button>
+                <button id="submit" type="submit" >submit</button>
+                </p>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-sidth, initial-scale=1.0">        
+        <title>login Form</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/login.css">
+
+    </head>
+    <body>
+        <div>
+            <header>
+                <h1> User Login</h1>
+            </header>
+            <form>
+                <p>
+                <label for = "username"> Username</label>
+                <input
+                    placeholder="Type your username"
+                    required pattern= "\d+"
+                    id="username" 
+                    type="text" 
+                    required>
+                <br />    
+                <label>Password</label>
+                <input 
+                    placeholder="Type your password"
+                    type="password" 
+                    required/>
+                <br />
+                <input type="submit"
+                    id="button" />
+
+                </p>
+            </form>
+        </div>
+    </body>
+</html>
