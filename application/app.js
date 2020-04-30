@@ -11,6 +11,7 @@ var logger = require('morgan');
 // routers
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var dbRouter = require('./routes/dbtest');
 
 // make express app
 var app = express();
@@ -40,8 +41,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);      ///// -> go index.js to run router.
 app.use('/users', usersRouter); ///// -> go users.js to run router.
+app.use('/dbtest', dbRouter); ///// -> go users.js to run router.
 
-
+app.use((err, req, res, next) => {
+    res.status(500);
+    res.send('********db error*********');
+});
 
 
 // ** put error handler
