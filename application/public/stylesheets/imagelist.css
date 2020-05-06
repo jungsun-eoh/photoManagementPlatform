@@ -1,0 +1,23 @@
+* {
+    box-sizing:  border-box;
+    text-align: center;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 90%;
+    margin: auto;
+}
+
+.grad-container {
+
+}
+
+.shadow {
+    border: 1px solid #cccccc;
+    box-shadow: 0 2px #eeeeee
+}
+
+.site-header {
+    
+}
