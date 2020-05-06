@@ -21,13 +21,14 @@ router.get('/registration', function (req, res, next) {
   res.sendFile('registration.html', {root:'public/html'});
 });
 
-
-
 //localhost:3000/postimage          
 router.get('/postimage', function (req, res, next) {
   res.sendFile('postimage.html', {root:'public/html'});
 });
 
+router.get('/imagelist', function (req, res, next) {
+  res.sendFile('imagelist.html', {root:'public/html'});
+});
 
 
 module.exports = router;
