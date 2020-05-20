@@ -4,7 +4,7 @@
         <meta charset = "UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>User Registration</title>
-        <link rel="stylesheet" type="text/css" href="stylesheets/registraion.css">
+        <link rel="stylesheet" type="text/css" href="public/stylesheets/registraion.css">
 
 
     </head>
@@ -14,11 +14,10 @@
                 <h1> Register</h1>
             </header>
             <form
-                class="form-grid-reg"
                 action="/users/register"
                 method="POST"
                 enctype="application/x-www-form-urlencoded"
-                >
+            >
                 <p>
                 <label for = "username" class="txt-label"> Username</label>
                 <input
@@ -31,13 +30,14 @@
                 <label for = "Email" class="txt-label"> Email</label>
                 <input
                     placeholder="Email address"
-                    id="username" 
+                    id="email" 
                     type="email" 
                     name="email"
                     required>
                 <br />    
                 <label for="password" class="txt-label">Password</label>
                 <input 
+                    id="passwd"
                     placeholder="Enter password"
                     type="passwd"
                     name="password"
@@ -45,6 +45,7 @@
                 <br />
                 <label for = "concirmPassword" class="txt-label"> Confirm Password</label>
                 <input 
+                    id="cpasswd"
                     placeholder="Repeat password"
                     type="cpasswd"
                     required />
