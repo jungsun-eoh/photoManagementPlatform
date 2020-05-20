@@ -13,34 +13,40 @@
             <header>
                 <h1> Register</h1>
             </header>
-            <form>
+            <form
+                class="form-grid-reg"
+                action="/users/register"
+                method="POST"
+                enctype="application/x-www-form-urlencoded"
+                >
                 <p>
                 <label for = "username" class="txt-label"> Username</label>
                 <input
                     placeholder="Type your username"
-                    required pattern= "\d+"
                     id="username" 
                     type="text" 
+                    name="username"
                     required>
                 <br />    
                 <label for = "Email" class="txt-label"> Email</label>
                 <input
                     placeholder="Email address"
-                    required pattern= "\d+"
                     id="username" 
-                    type="text" 
+                    type="email" 
+                    name="email"
                     required>
                 <br />    
                 <label for="password" class="txt-label">Password</label>
                 <input 
                     placeholder="Enter password"
-                    type="password"
+                    type="passwd"
+                    name="password"
                     required />
                 <br />
                 <label for = "concirmPassword" class="txt-label"> Confirm Password</label>
                 <input 
                     placeholder="Repeat password"
-                    type="password"
+                    type="cpasswd"
                     required />
                 <br />
                 <input type ="checkbox" name="accept" required> I am 13 years of age or older.
