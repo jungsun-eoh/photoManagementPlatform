@@ -8,6 +8,8 @@ var path = require("path");
 var cookieParser = require("cookie-parser");    
 var logger = require("morgan");     
 var bodyParser = require("body-parser");
+var session = require("express-session");
+var mysqlStore = require("express-mysql-session")(session);
 
 // routers
 var indexRouter = require("./routes/index");
@@ -32,6 +34,15 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.urlencoded({ extended: false }));
 
+var sessionStore = new mysqlStore({/* using default option*/}, require('./config/database'));
+var sessionOptions= {
+    key: "csid",
+    secret: "this is a secret for csc317",
+    store: sessionStore,
+    cookie: {secure: false, httpOnly: false, maxAge: 900000},
+    resave: false, 
+    saveUninitialized: false
+}
 // app.use(express.static(path.join(__dirname, "public")));
 ///// once express fx receives a request executing these routers above
 /////   depending  on the path as typed on localhost:3000, will be mapped to the route path below.
@@ -39,6 +50,8 @@ app.use(express.urlencoded({ extended: false }));
 ///// __dirname : path to the application
 // __dirname + public/ + this.request.url
 // /var/www/html/app/public/stylesheets/style.css
+
+app.use(session(sessionOptions));
 
 app.use("/", indexRouter);      ///// -> go index.js to run router.
 app.use("/users", usersRouter); ///// -> go users.js to run router.
