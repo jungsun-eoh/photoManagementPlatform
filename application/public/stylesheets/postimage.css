@@ -6,7 +6,6 @@
 }
 
 h1 {
-	display: inline-block;
 	text-align: center;
 	margin: auto;
 	width: 50%;
@@ -16,9 +15,8 @@ h1 {
 	font-size:30px
 }
 
-p {
-	border: 3px solid green;
-	display: inline-block;
+#post-image {
+	
 	margin: auto;
 	text-align: center;
     width: 400px;

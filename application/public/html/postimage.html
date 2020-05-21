@@ -4,11 +4,39 @@
         <meta charset = "UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" type="text/css" href="stylesheets/postimage.css">
-
+        <link rel="stylesheet" type="text/css" href="public/stylesheets/postimage.css">
+        <script defer src="/public/js/frontendjs.js"></script>
+        <link rel="stylesheet" href="public/stylesheets/style.css">
+      
+        <script src="http://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </head>
 
     <body>
+       
+        <div class="gird-container">
+            <div  id="banner"> Photo App </div>
+            
+            <nav class= "site-header" id="nav-bar">
+              <div class="nav-items">
+                <a href="/" id="indext"> Home </a>
+        
+              </div>
+              <div class="nav-items">
+                <a href ="/postimage" id="post-image"> Post</a>
+                
+              </div>
+              <div class="nav-items">
+                <a href ="/login" id="authenticate-button"> Login</a>
+                
+              </div>
+              <input id="search" name="search" type="text">
+              <div id="text-bar-icon "></div>
+             
+            </nav>
+          </div>
+        
+         
+        
         <div>
             <header>
                 <h1> File Submission</h1>

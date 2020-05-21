@@ -1,8 +1,37 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
 
 a {
-  color: #00B7FF;
+  color:green;
+}
+
+* {
+  box-sizing: border-box;
+
+
+}
+
+
+#banner {
+  padding: 10px;
+  text-align: center;
+  background-color:#aec2b4;
+  font-family: verdana;
+  box-shadow: 5px 10px 0 #cccccc;
+  margin-bottom: 1em;
+  color: green;
+  text-shadow: black;
+  
+  font-size: 30px;
+}
+.nav-items {
+  font-family: verdana;
+  background-color: #c2d1c7;
+  text-align: center;
+  width: 33.3%;
+  padding: 5px;
+
+  float: left;
 }

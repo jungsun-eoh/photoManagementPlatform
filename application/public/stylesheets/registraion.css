@@ -6,7 +6,7 @@
     font-size: 16px;
 }
 h1 {
-	display: inline-block;
+	
 	text-align: center;
 	margin: auto;
 	width: 50%;
@@ -18,7 +18,7 @@ h1 {
 
 p {
 	border: 3px solid green;
-	display: inline-block;
+	
 	margin: auto;
 	text-align: center;
     width: 500px;

@@ -4,17 +4,28 @@
         <meta charset = "UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
         <title>login Form</title>
+        <script defer src="/public/js/frontendjs.js"></script>
+        <link rel="stylesheet" href="public/stylesheets/style.css">
+
         <link rel="stylesheet" type="text/css" href="public/stylesheets/login.css">
         
     </head>
     <body>
+
+        <div>
+            <div  id="banner"> Photo App </div>
+        </div>
+
+
+
         <div>
             <header>
                 <h1> User Login</h1>
             </header>
-            <form method="POST" action="/users/login"
-            enctype="application/x-www-form-urlencoded"
-            >
+            <p>
+                 <form id= "userLogin" method="POST" action="/users/login"
+                enctype="application/x-www-form-urlencoded"
+                >
                 <label for = "username"> Username</label>
                 <input
                     placeholder="Type your username"
@@ -39,7 +50,9 @@
             <div id="registration"> 
                 Do not have account?
                 <a href="/register"> Register Here</a>
+            
             </div>
+        </p>
         </div>
     </body>
 </html>

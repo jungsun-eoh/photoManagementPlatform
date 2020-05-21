@@ -5,25 +5,30 @@
   <meta charset = "UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">        
   <title>Express</title>
-  <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="public/stylesheets/style.css">
   <script defer src="/public/js/frontendjs.js"></script>
 </head>
 
 <body>
-  <h1>Express</h1>
-  <h2>Hello world, i am Jungsun Eoh</h2>
+  <div >
+    <div  id="banner"> Photo App </div>
+      
+    <nav class= "site-header" id="nav-bar">
+      <div class="nav-items">
+        <a href="/" id="index"> Home </a>
 
-  <div id=container>
-    <div id="banner">
-    </div>
-    <nav id="nav-bar">
-      <div id="nav-items">
-        <a href="/" id="indext"> Home </a>
+      </div>
+      <div class="nav-items">
+        <a href ="/postimage" id="post-image"> Post</a>
+        
+      </div>
+      <div class="nav-items">
+        <a href ="/login" id="authenticate-button"> Login</a>
+        
       </div>
       <input id="search" name="search" type="text">
       <div id="text-bar-icon "></div>
-      <a href ="/postimage" id="post-image"> Post</a>
-      <a href ="/login" id="authenticate-button"> Login</a>
+     
     </nav>
   </div>
 

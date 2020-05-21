@@ -1,7 +1,6 @@
 
 
 h1 {
-	display: inline-block;
 	text-align: center;
 	margin: auto;
 	width: 50%;
@@ -11,9 +10,8 @@ h1 {
 	font-size:30px
 }
 
-p {
-	border: 3px solid green;
-	display: inline-block;
+#userLogin {
+	
 	margin: auto;
 	text-align: center;
 
@@ -24,6 +22,16 @@ p {
 	padding: 30px
 }
 
+#registration {
+	margin: auto;
+	text-align: center;
+
+	width: 50%;
+
+	font-family: verdana;
+
+
+}
 #button {
 	background-color: orange;
 	
