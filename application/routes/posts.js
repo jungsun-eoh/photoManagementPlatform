@@ -15,7 +15,7 @@ var storage = multer.diskStorage({
     filename: function(req, file, cb) {
         let fileExt = file.mimetype.split("/")[1];
         let randomName = crypto.randomBytes(22).toString("hex");
-        cb(null, `${this.randomName}.${fileExt}`);
+        cb(null, `${randomName}.${fileExt}`);
     }
 });
 
@@ -27,7 +27,7 @@ router.post('/postimage', uploader.single('uploadImage') ,(req,resp,next) => {
     let destOfThumbnail = req.file.destination + "/" + fileAsThumbnail;
     let title = req.body.title;
     let desc = req.body.description;
-    let fk_userid = req.session.userId;
+    let fk_userid = req.session.userID;
 
     sharp(fileUploaded) 
         .resize(200)
@@ -37,18 +37,17 @@ router.post('/postimage', uploader.single('uploadImage') ,(req,resp,next) => {
             'INSERT INTO posts (title, description, photopath, thumbnail, created, fk_userid) VALUE (?,?,?,?,now(),?);'
             return db.execute(baseSQL, [title, desc, fileUploaded, destOfThumbnail, fk_userid]);
         })
-        .then(([results, fileds]) => {
+        .then(([results, fields]) => {
             if (results && results.affectedRows) {
                 successPrint('new post created');
-                resp.json({status:"OK", message:"post created", "redirect": "/"});
+                resp.redirect('/');
+                //resp.json({status:"OK", message:"post created", "redirect": "/"});
             } else {
-                resp.json({status:"OK", message:"post not created", "redirect": "/postimage"});
-
-                //next(error('post was not created'));
+                //resp.json({status:"OK", message:"post was not created", "redirect": "/postimage"});
+                next(error('post was not created'));
             }
         })
         .catch((err) => {next(err)});
-   
 });
 
 module.exports = router;

@@ -99,18 +99,6 @@ router.post("/login", (req, resp, next) => {
       }
     })
 });
-/* GET users listing. */
-
-// //localhost:3000/users
-// router.get("/", function(req, res, next) {
-//   res.send("respond with a resource");
-// });
-
-// //localhost:3000/users/register         /////mounted path
-
-// router.post("/register", function(req, res, next) {
-//   res.send("respond with a resource");
-// });
 
 router.post('/logout', (req, resp, next) => {
   req.session.destroy((err) => {

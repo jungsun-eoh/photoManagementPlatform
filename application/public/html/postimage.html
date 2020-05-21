@@ -8,7 +8,8 @@
         <script defer src="/public/js/frontendjs.js"></script>
         <link rel="stylesheet" href="public/stylesheets/style.css">
       
-        <script src="http://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        
     </head>
 
     <body>
@@ -42,11 +43,13 @@
                 <h1> File Submission</h1>
             </header>
             <p>
+               
+
                 <form
                     id="post-image"
-                    action="/posts/postimage"
                     method="POST"
                     enctype="multipart/form-data"
+                    action="/posts/postimage"
                 >
                 <label for = "post-title" class = "txt-label"> Title</label>
                 <input
@@ -77,8 +80,46 @@
                 
             </p>
         </div>
+        <!-- <script>
+            const _form = document.getElementById("post-image");
+            _form.onsubmit = function(event) {
+                event.preventDefault(); 
+                let _body = new FormData(_form);
+
+                // fetch("/posts/postimage", {
+                //     body:_body,
+                //     method:"POST"
+                // })
+                // .then((data) => {
+                //     console.log(data);
+                //     return data.json();
+                // })
+                // .then((dataAsObject) => {
+                //     console.log(dataAsObject);
+                //     alert(dataAsObject.message);
+                //     location.replace(dataAsObject.redirect);
+                //     //location.replace();
+                // })
+                // .catch(err => console.log(err));
+
+                
+                // axios("/posts/postimage", {
+                //     data:_body,
+                //     method:"POST"
+                // })
+                // .then((data) => {
+                //     console.log(data.data);
+                    
+
+                //     alert(data.data.message);
+                //     location.replace(data.data.redirect);
+                //     //location.replace();
+                // })
+                // .catch(err => console.log(err));
+            }
+        </script>  -->
     </body>
  
-    </body>
+ 
 
 </html>
