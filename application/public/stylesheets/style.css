@@ -1,6 +1,5 @@
 body {
   padding: 50px;
-
 }
 
 a {
@@ -9,8 +8,6 @@ a {
 
 * {
   box-sizing: border-box;
-
-
 }
 
 
@@ -21,9 +18,7 @@ a {
   font-family: verdana;
   box-shadow: 5px 10px 0 #cccccc;
   margin-bottom: 1em;
-  color: green;
-  text-shadow: black;
-  
+  color: green;  
   font-size: 30px;
 }
 .nav-items {
@@ -32,6 +27,63 @@ a {
   text-align: center;
   width: 33.3%;
   padding: 5px;
-
   float: left;
+}
+
+.search-bar {
+  padding: 3px;
+  text-align: center;
+  background-color:#aec2b4;
+}
+#search-text {
+  width: 50%;
+  padding: 3px;
+}
+
+.card-image{
+  background-color: green;
+
+  border: dashed #aec2b4
+}
+
+.card-body {
+  text-align: center;
+  font-family: verdana;
+  background-color: #aec2b4;
+  font-size: 11px;
+  padding: 3px;
+}
+
+.dtl-button {
+  border: solid 1px green;
+  padding: 2px;
+}
+.grid-container {
+  display: grid;
+  height: 80vh;
+  margin: 20px auto auto auto;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  grid-auto-columns: 1fr; 
+  gap: .25rem;
+  grid-template-areas: 
+  "content content content content"
+  "content content content content"
+  "content content content content";
+}
+
+@media screen and (max-width: 500px) {
+  .grid-container {
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: .15em;
+    grid-template-areas: 
+    "content content"
+    "content content"
+    "content content"
+    "content content"
+    "content content"
+    "content content";
+  }
 }

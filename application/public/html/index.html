@@ -16,21 +16,49 @@
     <nav class= "site-header" id="nav-bar">
       <div class="nav-items">
         <a href="/" id="index"> Home </a>
-
       </div>
       <div class="nav-items">
         <a href ="/postimage" id="post-image"> Post</a>
-        
       </div>
       <div class="nav-items">
         <a href ="/login" id="authenticate-button"> Login</a>
-        
       </div>
-      <input id="search" name="search" type="text">
-      <div id="text-bar-icon "></div>
-     
+      <div class = "search-bar">
+        <input id="search-text" name="search-text" type="text"/>
+         
+            <button id="search-btn">search</button>  
+          
+      </div>
     </nav>
+    <div class="grid-container" id="main-content"></div>
   </div>
 
-
+  <script>
+    function createCard(data) {
+      return `<div id=post-${data.id} class="card"> \
+        <img class="card-image" src="${data.thumbnail}"> \
+        <div class="card-body"> \
+            <p class="card-title">${data.title}</p> \
+            <p class="card-text">${data.description}</p> \
+            <a href="posts/imagepost/${data.id}" class="dtl-button"> Details</a>  \
+        </div> \
+      </div>`;     
+    }
+    function runSearch() {
+      let searchTerm = document.getElementById('search-text').value;
+      let searchURL = 'http://localhost:3000/posts/search/' + searchTerm;
+      fetch(searchURL)
+      .then((data) => data.json())
+      .then((dataAsObject) => {
+        console.log(dataAsObject);
+        let _html = "";
+        dataAsObject.forEach((post) => {
+          _html += createCard(post);
+        })
+        document.getElementById('main-content').innerHTML = _html;
+      })
+      .catch((err) => console.log('runsearch error'));
+    }
+    document.getElementById('search-btn').onclick = runSearch;
+  </script>
 </body>
