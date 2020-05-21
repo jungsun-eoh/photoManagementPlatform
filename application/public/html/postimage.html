@@ -14,25 +14,33 @@
                 <h1> File Submission</h1>
             </header>
             <p>
-                
+                <form
+                    id="post-image"
+                    action="/posts/postimage"
+                    method="POST"
+                    enctype="multipart/form-data"
+                >
                 <label for = "post-title" class = "txt-label"> Title</label>
                 <input
                     placeholder="Post Title"
                     id="post-title" 
                     type="text" 
+                    name="title"
                     required>
                 <br />    
                 <label for = "post-dscrt" class = "txt-label"> Post description</label>
                 <input
                     placeholder="Description here..."
-                    id="username" 
+                    id="post-dscrt" 
                     type="text" 
+                    name="description"
                     required>
                 <br />    
                 <label for="select" class = "txt-label"> Upload Image</label>
                 <input 
-                    id = "select"
+                    id = "img-select"
                     type= "file"
+                    name="uploadImage"
                     required />
                 <br />
                 <input type ="checkbox" id="accept" required> Accept <a href="#">Use of Policy</a>

@@ -83,7 +83,7 @@ router.post("/login", (req, resp, next) => {
         successPrint("successful login");
         req.session.username = username;
         req.session.userID = userID;
-        console.log(req.session);
+        //console.log(req.session);
         resp.redirect("/");    
       } else {
         throw new UserError("username or password is incorrect", "/login", 200);

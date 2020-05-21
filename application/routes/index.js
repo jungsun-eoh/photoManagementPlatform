@@ -1,6 +1,10 @@
 var express = require("express");
 var router = express.Router();
 var path = require("path");
+var isLoggedIn = require('../middleware/routerprotectors').userIsLoggedIn;
+
+const errorPrint = require("../helpers/debug/debughelpers").errorPrint;
+const successPrint = require("../helpers/debug/debughelpers").successPrint;
 
 /* GET home page. */
 
@@ -22,6 +26,7 @@ router.get("/register", function (req, res, next) {
   res.sendFile("registration.html", {root:"public/html"});
 });
 
+router.use('/postimage', isLoggedIn);
 //localhost:3000/postimage          
 router.get("/postimage", function (req, res, next) {
   res.sendFile("postimage.html", {root:"public/html"});

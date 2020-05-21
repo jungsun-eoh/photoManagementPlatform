@@ -14,6 +14,7 @@ var mysqlStore = require("express-mysql-session")(session);
 // routers
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+var postRouter = require("./routes/posts");
 var dbRouter = require("./routes/dbtest");
 
 // make express app
@@ -52,14 +53,14 @@ var sessionOptions= {
 // /var/www/html/app/public/stylesheets/style.css
 
 app.use(session(sessionOptions));
+app.use("/public", express.static(path.join(__dirname, "public")));
+app.use("/image", express.static(path.join(__dirname, "public/images")));
 
 app.use("/", indexRouter);      ///// -> go index.js to run router.
 app.use("/users", usersRouter); ///// -> go users.js to run router.
-
+app.use('/posts', postRouter);
 app.use("/dbtest", dbRouter); ///// -> go users.js to run router.
 
-app.use("/public", express.static(path.join(__dirname, "public")));
-app.use("/image", express.static(path.join(__dirname, "public/images")));
 
 app.use((err, req, res, next) => {
     console.log(err);
