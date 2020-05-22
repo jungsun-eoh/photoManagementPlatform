@@ -51,28 +51,22 @@
         </div>
     </div>
     <script>
-        // function buildMessage(msgData) {
-        // }
-        
-        
+        function buildMessage(msgData) {
         let url = document.URL.split('/');
-        let _id = url[url.length-1];
-        
+        let _id = url[url.length-1];      
         let postURL = "http://localhost:3000/posts/getPostById/" + _id;
-        
         fetch(postURL)
         .then((data) => data.json())
         .then((dataAsObject) => {
         console.log(dataAsObject);  
-        document.getElementById('image-post-author').textContent = dataAsObject.username;
-        // document.getElementById('image-post-date').textContent = dataAsObject.created;
-        // document.getElementById('image-post-desc').textContent = dataAsObject.description;
-
-        })
-      
-      .catch((err) => console.log('grab error'));
-    
-      
+        //  document.getElementByID('image-post-author').textContent = dataAsObject.username;
+        //  document.getElementById('image-post-date').textContent = dataAsObject.created;
+        //  document.getElementById('image-post-desc').textContent = dataAsObject.description;
+        // 
+      })
+        .catch((err) => console.log(err));
+        }
+        buildMessage();
     </script>
 
 </div>
