@@ -76,7 +76,7 @@ router.get('/imagePost/:id', (req, resp, next) => {
 router.get('/getPostById/:id', (req, resp, next) => {
     let _id = req.params.id;
     let _sql = 'SELECT p.id, p.title, p.description, p.photopath, p.created, u.username FROM posts p JOIN users u on p.fk_userid=u.id WHERE p.id=?;';
-    db.query(_sql, _id )
+    db.query(_sql, [_id] )
     .then(([results, fields]) => {
         resp.json(results[0]);
     })
