@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "proj-init": "./config/csc314db.sql",
     "start": "node ./bin/www"
   },
   "dependencies": {
