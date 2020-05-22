@@ -5,7 +5,7 @@
   <meta charset = "UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">        
   <title>Express</title>
-  <link rel="stylesheet" href="public/stylesheets/style.css">
+  <link rel="stylesheet" href="/public/stylesheets/style.css">
   <script defer src="/public/js/frontendjs.js"></script>
 </head>
 
@@ -60,5 +60,18 @@
       .catch((err) => console.log('runsearch error'));
     }
     document.getElementById('search-btn').onclick = runSearch;
+    
+      fetch('http://localhost:3000/posts/getRecentPosts/')
+      .then((data) => data.json())
+      .then((dataAsObject) => {
+        console.log(dataAsObject);
+        let _html = "";
+        dataAsObject.forEach((post) => {
+          _html += createCard(post);
+        })
+        document.getElementById('main-content').innerHTML = _html;
+      })
+      .catch((err) => console.log('runsearch error'));
+    
   </script>
 </body>
