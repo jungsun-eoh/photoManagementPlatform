@@ -63,7 +63,7 @@ router.get('/search/:searchTerm', (req, resp, next) => {
 
 router.get('/getRecentPosts', (req, resp, next) => {
     let _sql = 'SELECT p.id, p.title, p.description, p.thumbnail, u.id, u.username FROM posts p JOIN users u on p.fk_userid=u.id ORDER BY p.created DESC LIMIT 8;';
-    db.query(_sql, )
+    db.query(_sql,)
     .then(([results, fields]) => {
         resp.json(results);
     })
